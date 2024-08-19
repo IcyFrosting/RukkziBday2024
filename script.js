@@ -81,13 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function movePlayer(direction) {
         let playerLeft = parseInt(window.getComputedStyle(player).getPropertyValue('left'));
-
+    
         if (direction === 'left' && playerLeft > 0) {
             player.style.left = playerLeft - 50 + 'px';
         } else if (direction === 'right' && playerLeft < 250) {
             player.style.left = playerLeft + 50 + 'px';
         }
     }
+    
 
     // Arrow key controls
     document.addEventListener('keydown', (e) => {
@@ -97,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             movePlayer('right');
         }
     });
+
+    
 
     // Mobile touch controls
     leftButton.addEventListener('touchstart', () => movePlayer('left'));
